@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+	// Place for user defined headers, macros and types
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,11 +94,13 @@ static void MX_TIM6_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int delaytime = 1000;
+
+uint32_t delaytime = 1000;
 void HAL_GPIO_EXTI_Callback(uint16_t pin){
 	delaytime -= 100;
 	if (delaytime <= 0) delaytime = 1000;
 }
+
 /* USER CODE END 0 */
 
 /**
@@ -147,23 +151,26 @@ int main(void)
   MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
 
+  	  // User defined code run only once
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, 1);
-     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, 0);
-	 HAL_Delay(delaytime);
-
-	 HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, 0);
-     HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, 1);
-	 HAL_Delay(delaytime);
-
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+
+	  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, 1);
+	  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, 0);
+	  HAL_Delay(delaytime);
+
+	  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_5, 0);
+	  HAL_GPIO_WritePin(GPIOE, GPIO_PIN_6, 1);
+	  HAL_Delay(delaytime);
+
   }
   /* USER CODE END 3 */
 }
@@ -1063,8 +1070,8 @@ static void MX_DMA_Init(void)
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-/* USER CODE BEGIN MX_GPIO_Init_1 */
-/* USER CODE END MX_GPIO_Init_1 */
+  /* USER CODE BEGIN MX_GPIO_Init_1 */
+  /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOE_CLK_ENABLE();
@@ -1194,8 +1201,8 @@ static void MX_GPIO_Init(void)
   HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
-/* USER CODE BEGIN MX_GPIO_Init_2 */
-/* USER CODE END MX_GPIO_Init_2 */
+  /* USER CODE BEGIN MX_GPIO_Init_2 */
+  /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */

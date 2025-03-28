@@ -1,6 +1,6 @@
 ################################################################################
 # Automatically-generated file. Do not edit!
-# Toolchain: GNU Tools for STM32 (12.3.rel1)
+# Toolchain: GNU Tools for STM32 (13.3.rel1)
 ################################################################################
 
 -include ../makefile.init
@@ -60,8 +60,8 @@ all: main-build
 main-build: LAB0.elf secondary-outputs
 
 # Tool invocations
-LAB0.elf LAB0.map: $(OBJS) $(USER_OBJS) C:\Users\galeazzolu\STM32CubeIDE\workspace_1.17.0\LAB0\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "LAB0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\galeazzolu\STM32CubeIDE\workspace_1.17.0\LAB0\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+LAB0.elf LAB0.map: $(OBJS) $(USER_OBJS) C:\Users\lucag\Desktop\ControlSystemEngineering\_Embedded\ RTC\ERTC-Labs\LAB0\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "LAB0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\lucag\Desktop\ControlSystemEngineering\_Embedded RTC\ERTC-Labs\LAB0\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="LAB0.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

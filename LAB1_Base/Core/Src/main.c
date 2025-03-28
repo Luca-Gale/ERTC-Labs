@@ -101,6 +101,8 @@ static void MX_TIM9_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+extern void initialise_monitor_handles(void);
+
 int _write(int file, char *ptr, int len)
 {
 	int DataIdx;
@@ -148,6 +150,8 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+  initialise_monitor_handles();
+
   uint8_t data;
   HAL_StatusTypeDef status;
   /* USER CODE END 1 */
@@ -328,7 +332,8 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+	  printf("Hello, World!\n");
+	  HAL_Delay(1000);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
