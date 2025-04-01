@@ -152,7 +152,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
      int col = findPressedBit(keypad_data[0]);
      int row = findPressedBit(keypad_data[1]);
      if (row == -1 || col == -1){
-    	 print("No key pressed");
+    	 printf("No key pressed");
      }
      printf("Keypad button: (%c).\n",keypadLayout[col][row]);
 
