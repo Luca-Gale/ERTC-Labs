@@ -352,6 +352,20 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	  uint8_t sensor_data = 0;
+	  status =  HAL_I2C_Mem_Read(
+	      		    &hi2c1,
+	  				SX1509_I2C_ADDR1 << 1,
+	  				REG_DATA_B,
+	  				1,
+	  				&sensor_data,
+	  				1,
+	  				I2C_TIMEOUT);
+	  if (status != HAL_OK)
+	      printf("I2C communication error (%X).\n", status);
+	  printf("Line Sensor Data: 0x%02X\n", sensor_data);
+	  HAL_Delay(100);
+
 
   }
   /* USER CODE END 3 */
