@@ -12,7 +12,7 @@
 
 int ertc_dlog_send(struct ertc_dlog *logger, void *data, int size)
 {
-	if (logger->tx_enable) {
+	//if (logger->tx_enable) {
 		cobsEncode((uint8_t *)data, size, logger->txbuff);
 
 		/* Add null terminator */
