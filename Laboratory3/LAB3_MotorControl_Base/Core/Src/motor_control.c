@@ -70,11 +70,16 @@ float pi_control_antiwindup(PI_Controller *controller, float measured) {
 
 }
 
-void set_motor_pwm(int32_t duty, TIM_HandleTypeDef *htim_pwm, uint32_t ch1,
-		uint32_t ch2) {
+
+void set_motor_pwm(int32_t duty, TIM_HandleTypeDef *htim_pwm, uint32_t ch1, uint32_t ch2) {
 	if (duty >= 0) {
-		__HAL_TIM_SET_COMPARE(htim_pwm, ch1, (uint32_t )duty);
-		__HAL_TIM_SET_COMPARE(htim_pwm, ch2, 0);
+		// Forward and coast
+		// __HAL_TIM_SET_COMPARE(htim_pwm, ch1, (uint32_t )duty);
+		// __HAL_TIM_SET_COMPARE(htim_pwm, ch2, 0);
+
+		// Forward and brake
+		__HAL_TIM_SET_COMPARE(htim_pwm, ch1, (uint32_t)TIM8_ARR_VALUE);
+		__HAL_TIM_SET_COMPARE(htim_pwm, ch2, (uint32_t)(TIM8_ARR_VALUE - duty));
 	} else {
 		__HAL_TIM_SET_COMPARE(htim_pwm, ch1, 0);
 		__HAL_TIM_SET_COMPARE(htim_pwm, ch2, (uint32_t )(-duty));

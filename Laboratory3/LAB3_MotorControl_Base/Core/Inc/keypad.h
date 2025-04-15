@@ -14,15 +14,11 @@
 #include <string.h>
 #include "SX1509_Registers.h"
 
-#define SX1509_I2C_ADDR1 0x3E
-#define SX1509_I2C_ADDR2 0x3F
+#define SX1509_I2C_ADDR1 0x3E  // Line sensor
+#define SX1509_I2C_ADDR2 0x3F  // Keypad
 #define I2C_TIMEOUT 200
 
 // Function to read a key from the keypad (returns '\0' if no key pressed)
 char get_keypad_key(void);
-
-void handle_keypad_input(PI_Controller *controller);
-
-
 
 #endif /* KEYPAD_H_ */
