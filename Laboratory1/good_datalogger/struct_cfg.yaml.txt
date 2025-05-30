@@ -1,0 +1,8 @@
+%YAML 1.2
+---
+- accel_y: { a_x: float}
+# - misc_data: { a: float }
+- tilt_control: { g_x: float}
+# - subplot1: { data: float }
+# - subplot2: { data: float }
+# - accel_data: { a_x: float, a_y: float, a_z: float, a: float, b: float }
