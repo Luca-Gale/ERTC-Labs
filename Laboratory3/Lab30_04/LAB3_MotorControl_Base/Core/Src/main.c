@@ -147,10 +147,11 @@ int _write(int file, char *ptr, int len)
 }
 
 struct datalog {
-	float w1;
-	float w2;
-	float u1;
-	float u2;
+	float ref; // Reference speed for both motors [RPM]
+	float w1; // Speed 1 [RPM]
+	float w2; // Speed 2 [RPM]
+	float u1; // Control signal 1 [duty]
+	float u2; // Control signal 2 [duty]
 } data;
 
 char get_keypad_key(void) {
@@ -335,6 +336,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		}
 
 		// Log data
+		data.ref = ref_w1;
 		data.w1 = w1;
 		data.w2 = w2;
 		data.u1 = u1;

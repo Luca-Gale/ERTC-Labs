@@ -172,6 +172,8 @@ struct datalog {
 	float ref2;
 	float w2;
 	float eSL;
+	float base_speed;
+	float line_kp;
 } data;
 
 char get_keypad_key(void) {
@@ -459,6 +461,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 		data.ref2 = ref_w2;
 		data.w2 = w2;
 		data.eSL = eSL_int;
+		data.base_speed = BASE_SPEED_RPM;
+		data.line_kp = line_kp;
 		ertc_dlog_send(&logger, &data, sizeof(data));
 	}
 }

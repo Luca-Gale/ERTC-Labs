@@ -1,7 +1,27 @@
 %YAML 1.2
 ---
-- accel_y: { a_y: float}
-- tilt_control: { u_tilt: float }
+# Lab2 - main1
+#- Accel_y: { a_y: float}
+#- Tilt_control: { u_tilt: float }
 # - subplot1: { data: float }
 # - subplot2: { data: float }
 # - accel_data: { a_x: float, a_y: float, a_z: float, a: float, b: float }
+
+# Lab2 - main2
+#- Accel y: { a_y: float}
+#- Tilt control: { u_tilt: float }
+#- Gyro z: { g_z: float}
+#- Complementary angle: {comp_angle: float}
+#- Pan control: {u_pan: float}
+
+# Lab3
+#- Ref: {ref: float}
+#- Angular velocity: {w1: float, w2: float}
+#- Control signal: {u1: float, u2: float}
+
+# Lab4
+- Wheel 1: {ref1: float, w1: float}
+- Wheel 2: {ref2: float, w2: float}
+- Line error: {eSL: float}
+- Base speed: {base_speed: float}
+- Line gain: {line_kp: float}
